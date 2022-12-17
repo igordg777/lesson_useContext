@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Animals from './components/FirstBranch/Animals'
+import Flowers from './components/SecondBranch/Flowers'
+
+import MyContextForAnimalsFlowers from './context'
+
+import { useState } from 'react'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContextForAnimalsFlowers.Provider value={{ count: count, setCount: setCount }}>
+      <div className="App">
+        <Animals />
+        <Flowers />
+      </div>
+    </MyContextForAnimalsFlowers.Provider>
   );
 }
 
