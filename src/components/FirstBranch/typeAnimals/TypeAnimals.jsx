@@ -9,7 +9,7 @@ function TypeAnimals() {
     const setCount = result.setCount;
     return (
         <>
-            <h1>TypeAnimals</h1>
+            TypeAnimals
 
             <button onClick={() => setCount(count - 1)}>Минус</button>
             {count}
